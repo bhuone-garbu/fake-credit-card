@@ -8,7 +8,7 @@ def generate_card(type):
     """
     Prefill some values based on the card type
     """
-    card_types = ["americanexpress","visa","mastercard","discover"]
+    card_types = ["americanexpress","visa13", "visa16","mastercard","discover"]
     
     def prefill(t):
         # typical number of digits in credit card
@@ -21,20 +21,20 @@ def generate_card(type):
         if t == card_types[0]:
             # american express starts with 3 and is 15 digits long
             # override the def lengths
-            return [3, randint(4,7)], 15 - 2
+            return [3, randint(4,7)], 13
             
-        elif t == card_types[1]:
-            # visa starts with 4 but can be 13 or 16 length
-            v = raw_input("Enter 13 or 16 for the digits required (visa): ")
-            while not v == "13" and not v == "16":
-                v = raw_input("Invalid input.... Enter 13 or 16 for the digits required (visa): ")
-            return [4], int(v) - 1
+        elif t == card_types[1] or t == card_types[2]:
+            # visa starts with 4
+            if t.endswith("16"):
+                return [4], def_length - 1
+            else:
+                return [4], 12
             
-        elif t == card_types[2]:
+        elif t == card_types[3]:
             # master card start with 5 and is 16 digits long
             return [5, randint(1,5)], def_length - 2
             
-        elif t == card_types[3]:
+        elif t == card_types[4]:
             # discover card starts with 6011 and is 16 digits long
             return [6, 0, 1, 1], def_length - 4
             
@@ -86,7 +86,7 @@ generate_card("discover")
 generate_card("mastercard")
 generate_card("americanexpress")
 
-generate_card("visa")
-generate_card("visa")
+generate_card("visa13")
+generate_card("visa16")
 
 
