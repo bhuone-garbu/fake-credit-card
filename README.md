@@ -1,4 +1,4 @@
-# fake-credit-card generation/validator
+# Fake-credit-card generation/validator
 
 Quick and dirty implementation using Python. Feel free to reuse or port it into other lang for whatever the reason. I won't be responsible for how 
 
