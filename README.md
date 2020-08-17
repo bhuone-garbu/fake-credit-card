@@ -1,9 +1,14 @@
 # Fake-credit-card generation/validator
 
+## Update:
+
+A JavaScript version is available here: https://github.com/bhuone-garbu/js-credit-card-generator, including demo.
+
+## Background
+
 Quick and dirty implementation using Python.
 DISCLAIMER: This is only meant for "educational" purpose.
 
-## Background
 This is only generating a fake credit card number that statisfies the Luhn check algorithm which most of the card validation are based upon. So by knowing how the 'mod 10' is applied to validate the card number, we can then add appropriate checksum digit at the end of the number to making the random generation of number appear like a valid credit card number - reverse engineering.
 
 Obviously, we also need to know some basics of card numbering system.
