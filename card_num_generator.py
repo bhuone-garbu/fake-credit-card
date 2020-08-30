@@ -65,7 +65,9 @@ def generate_card(type):
                 check_sum += n_ -9 if n_ > 9 else n_
             else:
                 check_sum += n
-        return nums + [10 - (check_sum % 10) ]
+        n1 = 10 - (check_sum % 10)
+        if n1>9: n1=0
+        return nums + [ n1 ]
     
     # main body
     t = type.lower()
